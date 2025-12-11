@@ -87,11 +87,11 @@ export const Hero: React.FC = () => {
                  <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 mb-6">
                     <div className="flex justify-between items-center mb-2">
                        <span className="text-xs text-slate-400 font-bold uppercase">Người thụ hưởng</span>
-                       <span className="text-sm font-bold text-slate-800">Nguyễn Liên Mạnh</span>
+                       <span className="text-sm font-bold text-slate-800">Trịnh Thúy Oanh</span>
                     </div>
                     <div className="flex justify-between items-center">
-                       <span className="text-xs text-slate-400 font-bold uppercase">MB Bank</span>
-                       <span className="text-sm font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded">334218</span>
+                       <span className="text-xs text-slate-400 font-bold uppercase">VPBank</span>
+                       <span className="text-sm font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded">0705886278</span>
                     </div>
                  </div>
 
