@@ -37,16 +37,16 @@ export const Hero: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-6 pt-4">
                <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                  <div className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Mục tiêu trà sữa</div>
-                  <div className="text-2xl font-bold text-slate-900">200.000đ</div>
+                  <div className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Mục tiêu cứu đón cả phòng</div>
+                  <div className="text-2xl font-bold text-slate-900">20.000.000đ</div>
                   <div className="w-full bg-slate-100 h-1.5 mt-2 rounded-full overflow-hidden">
-                     <div className="bg-orange-500 h-full w-[20%] rounded-full" />
+                     <div className="bg-orange-500 h-full w-[5%] rounded-full" />
                   </div>
-                  <div className="text-[10px] text-slate-400 mt-1">Đủ cho 4 ly full topping</div>
+                  <div className="text-[10px] text-slate-400 mt-1">Đủ sức cứu cả phòng 4 người</div>
                </div>
                <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
                   <div className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Năng lượng team</div>
-                  <div className="text-2xl font-bold text-slate-900">15%</div>
+                  <div className="text-2xl font-bold text-slate-900">1%</div>
                   <div className="text-xs text-red-500 font-bold mt-1 flex items-center gap-1">
                      <Zap size={12} fill="currentColor" /> Sắp sập nguồn
                   </div>
