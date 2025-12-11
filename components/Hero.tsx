@@ -71,7 +71,7 @@ export const Hero: React.FC = () => {
                  
                  <div className="relative z-10 text-center mb-8">
                     <h3 className="text-slate-900 font-bold text-lg">Quỹ Chống Đói Phòng MKT</h3>
-                    <p className="text-slate-500 text-sm">(Thủ quỹ: Mạnh - Đại diện 4 anh em)</p>
+                    <p className="text-slate-500 text-sm">(Thủ quỹ: Oanh - Đại diện 4 anh em)</p>
                  </div>
 
                  {/* QR Area - Using VietQR API */}
