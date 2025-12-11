@@ -5,49 +5,68 @@ import { Heart, X, Coffee, BatteryWarning } from 'lucide-react';
 const teamMembers: TeamMember[] = [
   {
     id: 'leader',
-    name: 'Sếp Mạnh (Leader)',
-    role: 'Gánh Team',
-    image: 'https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=1000&auto=format&fit=crop',
-    status: 'Đang họp (lần thứ 8 trong ngày)',
-    description: 'Chuyên gia hứa deadline với khách. Cần trà sữa để hạ hỏa.',
-    hungerLevel: 90,
-  },
-  {
-    id: 'content',
-    name: 'Bé Na (Content)',
-    role: 'Múa Bút',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1000&auto=format&fit=crop',
-    status: 'Bí từ, cắn móng tay',
-    description: 'Viết nghìn bài không mệt, chỉ mệt vì đói. Cần bánh ngọt để nảy số.',
-    hungerLevel: 95,
+    name: 'Sếp Mạnh Vũ',
+    role: 'Leader',
+    image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1000&auto=format&fit=crop',
+    status: 'Đang xử lý họp gấp',
+    description: 'Gánh team, chốt deadline và cần cafe để tỉnh táo.',
+    hungerLevel: 92,
+    bankName: '',
+    bankCode: '',
+    accountNumber: '',
+    accountHolder: 'MANH VU',
   },
   {
     id: 'design',
-    name: 'Cậu Ba (Design)',
-    role: 'Vẽ Vời',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop',
-    status: 'Mắt thâm, lưng mỏi',
-    description: 'Ghét màu đỏ, thích màu "ting ting". Cần vitamin C và Cafein.',
-    hungerLevel: 85,
+    name: 'Hàn Thảo',
+    role: 'Thiết kế',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop',
+    status: 'Mắt thâm, đang canh deadline',
+    description: 'Chạy layout xuyên đêm, cần vitamin C và năng lượng.',
+    hungerLevel: 90,
+    bankName: 'Techcombank',
+    bankCode: 'TCB',
+    accountNumber: '888805012000',
+    accountHolder: 'HAN THAO',
   },
   {
-    id: 'ads',
-    name: 'Chú Tư (Ads)',
-    role: 'Đốt Tiền',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop',
-    status: 'Nhìn chart đỏ lòm',
-    description: 'Tiêu tiền tỷ của sếp nhưng tiền túi thì rỗng. Cần mì tôm hảo hạng.',
-    hungerLevel: 99,
+    id: 'content',
+    name: 'Trịnh Oanh',
+    role: 'Content',
+    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1000&auto=format&fit=crop',
+    status: 'Đang brainstorm nội dung',
+    description: 'Viết bài, chỉnh mood, cần bánh ngọt để nảy số.',
+    hungerLevel: 94,
+    bankName: 'VPBank',
+    bankCode: 'VPB',
+    accountNumber: '0705886278',
+    accountHolder: 'TRỊNH THÚY OANH',
+  },
+  {
+    id: 'it',
+    name: 'Liên Mạnh',
+    role: 'IT',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop',
+    status: 'Fix bug, canh server',
+    description: 'Vừa deploy vừa săn lỗi, cần trà sữa để giữ tỉnh táo.',
+    hungerLevel: 97,
+    bankName: 'MBBank',
+    bankCode: 'MB',
+    accountNumber: '334218',
+    accountHolder: 'LIEN MANH',
   },
 ];
 
 export const TeamSection: React.FC = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-  const getQRLink = (memberName: string) => {
-    // Encode the note specifically for the selected member
-    const note = `Nuoi ${memberName.split(' ')[0]}`.toUpperCase();
-    return `https://img.vietqr.io/image/MB-334218-compact2.png?amount=&addInfo=${encodeURIComponent(note)}&accountName=NGUYEN%20LIEN%20MANH`;
+  const getQRLink = (member: TeamMember) => {
+    const note = `Nuoi ${member.name.split(' ')[0]}`.toUpperCase();
+    const accountName = encodeURIComponent(member.accountHolder);
+    // dùng bankCode để đổi QR theo từng thành viên
+    return `https://img.vietqr.io/image/${member.bankCode}-${member.accountNumber}-compact2.png?amount=&addInfo=${encodeURIComponent(
+      note
+    )}&accountName=${accountName}`;
   };
 
   return (
@@ -131,7 +150,7 @@ export const TeamSection: React.FC = () => {
 
               <div className="bg-white p-3 rounded-2xl shadow-inner border border-slate-100 mb-6 relative">
                  <img 
-                   src={getQRLink(selectedMember.name)}
+                   src={getQRLink(selectedMember)}
                    alt="QR Code"
                    className="w-full rounded-xl mix-blend-multiply"
                  />
@@ -141,7 +160,7 @@ export const TeamSection: React.FC = () => {
               </div>
 
               <div className="text-xs text-slate-400 font-medium">
-                Tài khoản: MB Bank - 334218 - Nguyen Lien Manh
+                Tài khoản: {selectedMember.bankName} - {selectedMember.accountNumber} - {selectedMember.accountHolder}
               </div>
               
               <button 

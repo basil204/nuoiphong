@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
                  <div className="mx-auto w-full max-w-[280px] bg-white p-4 rounded-3xl shadow-lg mb-8 flex items-center justify-center relative group">
                     <div className="absolute inset-0 rounded-3xl border-2 border-blue-100 group-hover:border-blue-300 transition-colors pointer-events-none" />
                     <img 
-                      src="https://img.vietqr.io/image/MB-334218-compact2.png?amount=&addInfo=Nuoi%20Team%20MKT&accountName=NGUYEN%20LIEN%20MANH"
+                      src="https://img.vietqr.io/image/VPB-0705886278-compact.png?amount=&addInfo=Nuoi%20Team%20MKT&accountName=TRINHi%20THUYi%20OANH"
                       alt="VietQR MB Bank"
                       className="w-full h-auto rounded-xl object-contain"
                     />

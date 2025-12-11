@@ -19,4 +19,8 @@ export interface TeamMember {
   status: string;
   description: string;
   hungerLevel: number; // 0-100
+  bankName: string;
+  bankCode: string; // used for VietQR image
+  accountNumber: string;
+  accountHolder: string;
 }
